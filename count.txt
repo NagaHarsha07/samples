@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n, temp, count = 0;
+    
+    printf("Enter the number: ");
+    scanf("%d", &n);
+    
+    temp = n;  // Copy n to temp
+    
+    while (temp > 0) {
+        int dig = temp % 10; // Extract the last digit
+        
+        if (dig != 0 && n % dig == 0) { // Check divisibility
+            count++;
+        }
+        
+        temp /= 10; // Remove the last digit
+    }
+    
+    printf("Count of digits dividing %d is: %d\n", n, count);
+    
+    return 0;
+}
